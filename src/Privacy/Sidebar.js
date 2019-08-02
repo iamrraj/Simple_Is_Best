@@ -33,11 +33,11 @@ class Sidebar extends Component {
 
                     <div style={{backgroundColor:"white", padding:"30px", marginTop: "20px"}}>
                         {/* <!-- Add font awesome icons --> */}
-                        <a href="# " className="fa fa-facebook text-center text-white" style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}} ></a>
-                        <a href="# " className="fa fa-twitter text-center text-white"  style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}}></a>
-                        <a href="# " className="fa fa-github text-center text-white"  style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}}></a>
-                        <a href="# " className="fa fa-linkedin text-center text-white"  style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}}></a>
-                        <a href="# " className="fa fa-youtube text-center text-white"  style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"24px"}}></a>
+                        <a href="# " className="fa fa-facebook text-center text-white" style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}} > </a>
+                        <a href="# " className="fa fa-twitter text-center text-white"  style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}}> </a>
+                        <a href="# " className="fa fa-github text-center text-white"  style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}}> </a>
+                        <a href="# " className="fa fa-linkedin text-center text-white"  style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}}> </a>
+                        <a href="# " className="fa fa-youtube text-center text-white"  style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"24px"}}> </a>
                     </div>
             </div>
         )

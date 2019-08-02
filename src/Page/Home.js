@@ -53,7 +53,7 @@ class Home extends Component {
 
                                 <hr style={{border: "1px dashed black", opacity: "0.2"}}/><br></br>
 
-                                <h1 style={{textalign:"center"}} className="text-dark" > { post.title } </h1>
+                                <center><h1 style={{textalign:"center"}} className="text-dark" > { post.title } </h1></center>
                                                 <br></br>
                                 <p style={{textAlign:"center", opacity: "0.7"}} className="text-dark"><i className="fa fa-calendar"></i> { post.publish } &nbsp; <i class="fa fa-user"></i>  { post.author }  &nbsp;
                                 <i className="fa fa-clock-o"></i> { post.read_time} Minutes Read   &nbsp; <i class="fa fa-comments"></i>  <a href="{{post.slug}}#disqus_thread" className="text-dark">Comments</a>   &nbsp;   
@@ -70,13 +70,14 @@ class Home extends Component {
                                     </p>
                         <hr style={{border: "1px dashed black", opacity: "0.2"}}/><br></br>
                         <p >
+            
                         
-                                <button class="btn " style={{background:"orange", color:"whit"}}> { post.name }</button>
+                        <button class="btn " style={{background:"orange", color:"whit"}}> { post.name }</button>
                             
                             <span style={{float:"right"}}>
-                                <a href="http://www.facebook.com/sharer.php?u={{request.build_absolute_uri}}" onclick="window.open('http://www.facebook.com/sharer.php?u={{request.build_absolute_uri}}/','Facebook share', 'height=600, width=800')" target="_blank" class="fa fa-facebook text-center text-white" style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}} ></a>
-                                <a href="https://twitter.com/share?url={{request.build_absolute_uri}}&amp;text=Simple%20Is%20Best&amp;hashtags=simpleisbest" target="_blank" class="fa fa-twitter text-center text-white" style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}}></a>
-                                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{request.build_absolute_uri}}" target="_blank" class="fa fa-linkedin text-center text-white" style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}}></a>
+                                <a href="http://www.facebook.com/sharer.php?u={{request.build_absolute_uri}}" onclick="window.open('http://www.facebook.com/sharer.php?u={{request.build_absolute_uri}}/','Facebook share', 'height=600, width=800')" target="_blank" class="fa fa-facebook text-center text-white" style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}} > </a>
+                                <a href="https://twitter.com/share?url={{request.build_absolute_uri}}&amp;text=Simple%20Is%20Best&amp;hashtags=simpleisbest" target="_blank" class="fa fa-twitter text-center text-white" style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}}> </a>
+                                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{request.build_absolute_uri}}" target="_blank" class="fa fa-linkedin text-center text-white" style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}}> </a>
                                 
 
                             </span>
