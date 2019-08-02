@@ -32,4 +32,36 @@
   }
 }
 
+#fact23 {
+  background: url("https://abs.green/files/pics/csm_Heydar-Aliyev-Center-6-cropped_web_v2_efbc456ba1.jpg") center top no-repeat fixed;
+  background-size: cover;
+  padding: 100px 0 ;
+  position: relative;
+  height: 300px;
+  }
+
+  #fact23::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(5, 5, 5, 0.78);
+  z-index: 0;
+  }
+  
+  
+  #fact23 .container {
+  position: relative;
+  z-index: 100;
+  }
+
+  @media (max-width: 600px) {
+    #img {
+      width: 400px;
+    }
+  }
+
+
 

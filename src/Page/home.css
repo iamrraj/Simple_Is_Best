@@ -1,0 +1,11 @@
+
+
+img{
+    width: 700px;
+}
+
+@media (max-width: 600px) {
+    #img {
+      width: 450px;
+    }
+  }
