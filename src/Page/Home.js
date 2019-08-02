@@ -3,6 +3,8 @@ import {  Row, Col,Container } from 'react-bootstrap';
 import axios from 'axios';
 import Sidebar from '../Privacy/Sidebar';
 import './home.css';
+// import Service from './Service'
+
 
 class Home extends Component {
     constructor(props){
@@ -21,6 +23,8 @@ class Home extends Component {
                 this.setState({ contact})
             })
     }
+
+    
 
     render() {
         return (
@@ -44,7 +48,7 @@ class Home extends Component {
                 {this.state.contact.map( post => 
                     <Col sm={8} style={{backgroundColor:"white", padding:"30px" , marginBottom: "40px"}} key={post.pk}>
                         {/* <p><ReactMarkdown  source = { c.title } escapeHtml={false}  /></p> */}
-                        <a href="# " style={{ textDecoration:"none"}}>
+                        <a href={"/" + post.pk} style={{ textDecoration:"none"}}>
                                 <h3 style={{opacity: "0.7"}} className="text-center text-dark">TUTORIAL</h3>
 
                                 <hr style={{border: "1px dashed black", opacity: "0.2"}}/><br></br>

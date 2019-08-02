@@ -6,6 +6,7 @@ import { Route,Switch} from 'react-router-dom';
 import {  Navbar, Nav,Container } from 'react-bootstrap';
 
 import Home from './Page/Home'
+import Details from './Page/Details'
 
 import About from './Privacy/About';
 import Privacy from './Privacy/Privacy';
@@ -41,6 +42,8 @@ const BaseLayout = () => (
               <Switch>
   
                 <Route path="/" exact component={Home} />
+                <Route exact path='/:pk' component={Details} />
+
                 <Route  path='/contact' component={Contact} /> 
                 <Route path="/cookies" component={Cookies} />
                 <Route path="/privacy" component={Privacy} />
