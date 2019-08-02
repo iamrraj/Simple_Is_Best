@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Simple_Is_Best/static/css/main.bc8d1910.chunk.css",
+    "main.js": "/Simple_Is_Best/static/js/main.c28f81d5.chunk.js",
+    "main.js.map": "/Simple_Is_Best/static/js/main.c28f81d5.chunk.js.map",
+    "runtime~main.js": "/Simple_Is_Best/static/js/runtime~main.fe24ad13.js",
+    "runtime~main.js.map": "/Simple_Is_Best/static/js/runtime~main.fe24ad13.js.map",
+    "static/js/2.2720b7f1.chunk.js": "/Simple_Is_Best/static/js/2.2720b7f1.chunk.js",
+    "static/js/2.2720b7f1.chunk.js.map": "/Simple_Is_Best/static/js/2.2720b7f1.chunk.js.map",
+    "index.html": "/Simple_Is_Best/index.html",
+    "precache-manifest.2928e7eb1a460ef5251a9700d8a0bbc8.js": "/Simple_Is_Best/precache-manifest.2928e7eb1a460ef5251a9700d8a0bbc8.js",
+    "service-worker.js": "/Simple_Is_Best/service-worker.js",
+    "static/css/main.bc8d1910.chunk.css.map": "/Simple_Is_Best/static/css/main.bc8d1910.chunk.css.map"
+  }
+}
