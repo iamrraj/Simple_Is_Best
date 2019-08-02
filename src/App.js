@@ -19,7 +19,7 @@ const BaseLayout = () => (
   <div>
   <Navbar bg="dark" expand="lg">
   <Container>
-    <Navbar.Brand href="/"> <img src="https://i.imgur.com/v7Or56c.png" class="logo" alt=""  style={{width:"220px", height: "30px"}} /> </Navbar.Brand>
+    <Navbar.Brand href="/"> <img src="https://i.imgur.com/v7Or56c.png" className="logo" alt=""  style={{width:"220px", height: "30px"}} /> </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto ">

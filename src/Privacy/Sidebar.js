@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {  Form,Button } from 'react-bootstrap';
+import {  Button } from 'react-bootstrap';
 import './side.css'
 
 
@@ -15,7 +15,7 @@ class Sidebar extends Component {
                     <p>Subscribe to our mailing list to receive updates from the blog</p>
 
                     <form action="#" method="POST">
-                        <label for="email"><strong>Email Address</strong></label>
+                        <label ><strong>Email Address</strong></label>
                         <input type="email" name="email" className="form-control" placeholder="Your@email.com"  />
                         <br></br>
                         <Button className="btn btn-primary" style={{backgroundColor: "orange", width: "120px"}}>Subscribe</Button>
