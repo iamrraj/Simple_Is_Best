@@ -4,6 +4,7 @@ import axios from 'axios';
 import Sidebar from '../Privacy/Sidebar';
 import './home.css';
 // import Service from './Service'
+import Moment from 'react-moment';
 
 
 class Home extends Component {
@@ -16,7 +17,7 @@ class Home extends Component {
     }
 
     componentDidMount(){
-        axios.get(`http://localhost:8000/api/react`)
+        axios.get(`http://simpleisbestt.herokuapp.com/api/react`)
             .then(res =>{
                 const contact = res.data;
                 console.log(res);
@@ -56,7 +57,7 @@ class Home extends Component {
                                 <center><h1 style={{textalign:"center"}} className="text-dark" > { post.title } </h1></center>
                                                 <br></br>
                                 <p style={{textAlign:"center", opacity: "0.7"}} className="text-dark"><i className="fa fa-calendar"></i> { post.publish } &nbsp; <i class="fa fa-user"></i>  { post.author }  &nbsp;
-                                <i className="fa fa-clock-o"></i> { post.read_time} Minutes Read   &nbsp; <i class="fa fa-comments"></i>  <a href="{{post.slug}}#disqus_thread" className="text-dark">Comments</a>   &nbsp;   
+                                <i className="fa fa-clock-o"></i>  { post.read_time}  Minutes Read    &nbsp; <i class="fa fa-comments"></i>  <a href="{{post.slug}}#disqus_thread" className="text-dark">Comments</a>   &nbsp;   
                                 <i className="fa fa-eye"></i> Views </p >
                                 <img id="img"  src={ post.murl} alt={ post.title }  ></img>
                                                 <br></br>

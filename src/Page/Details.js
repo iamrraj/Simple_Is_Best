@@ -16,7 +16,7 @@ class Details extends Component {
 
     async componentDidMount() {
         const { match: { params } } = this.props;
-        const blog = (await axios.get(`http://localhost:8000/api/react/${params.pk}`)).data;
+        const blog = (await axios.get(`http://simpleisbestt.herokuapp.com/api/react/${params.pk}`)).data;
         console.log(blog)
         this.setState({
           blog,
@@ -83,6 +83,9 @@ class Details extends Component {
 
                             </span>
                         </p>
+                        <div style={{marginTop: "40px", backgroundColor:"white", padding:"30px"}}>
+                            <div id="disqus_thread"></div>
+                        </div>
 
                         
             

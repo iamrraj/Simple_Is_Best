@@ -15,7 +15,7 @@ class Faq extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:8000/api/sib/faq')
+        axios.get('http://simpleisbestt.herokuapp.com/api/sib/faq')
             .then(res =>{
                 const contact = res.data;
                 console.log(res);

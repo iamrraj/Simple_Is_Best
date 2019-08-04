@@ -15,7 +15,7 @@ class Privacy extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:8000/api/sib/privacy')
+        axios.get('http://simpleisbestt.herokuapp.com/api/sib/privacy')
             .then(res =>{
                 const contact = res.data;
                 console.log(res);

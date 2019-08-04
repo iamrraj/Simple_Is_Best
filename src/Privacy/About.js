@@ -15,7 +15,7 @@ class About extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:8000/api/sib/about')
+        axios.get('http://simpleisbestt.herokuapp.com/api/sib/about')
             .then(res =>{
                 const contact = res.data;
                 console.log(res);

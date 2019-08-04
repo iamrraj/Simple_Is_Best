@@ -15,7 +15,7 @@ class Cookies extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:8000/api/sib/cookies')
+        axios.get('http://simpleisbestt.herokuapp.com/api/sib/cookies')
             .then(res =>{
                 const contact = res.data;
                 console.log(res);

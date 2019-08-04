@@ -14,7 +14,7 @@ class Contact extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:8000/api/sib/contact')
+        axios.get('http://simpleisbestt.herokuapp.com/api/sib/contact')
             .then(res =>{
                 const contact = res.data;
                 console.log(res);
