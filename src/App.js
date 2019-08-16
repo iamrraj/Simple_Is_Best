@@ -13,6 +13,7 @@ import Privacy from './Privacy/Privacy';
 import Cookies from './Privacy/Cookies';
 import Contact from './Privacy/Contact';
 import Faq from './Privacy/Faq';
+import Product from './Privacy/Product'
 
 
 const BaseLayout = () => (
@@ -25,11 +26,12 @@ const BaseLayout = () => (
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto ">
         <Nav.Link href="/" className="text-white"><i className="fa fa-home"></i>  Home</Nav.Link>
-        <Nav.Link href="#" className="text-white"><i className="fa fa-newspaper-o"></i> Article</Nav.Link>
+        <Nav.Link href="" className="text-white"><i className="fa fa-newspaper-o"></i> Article</Nav.Link>
         <Nav.Link href="#" className="text-white"><i className="fa fa-file-video-os"></i> Videos</Nav.Link>
         <Nav.Link href="#" className="text-white"><i className="fa fa-code"></i> Snippets</Nav.Link>
         <Nav.Link href="#" className="text-white"><i className="fa fa-bullhorn"></i> Sponser</Nav.Link>
         <Nav.Link href="#" className="text-white"><i className="fa fa-signal"></i> Rss</Nav.Link>
+        <Nav.Link href="/product" className="text-white"><i className="fa fa-signal"></i> Product</Nav.Link>
       </Nav>
       
     </Navbar.Collapse>
@@ -37,9 +39,9 @@ const BaseLayout = () => (
   </Navbar>
   
     <div>
-          <Provider>
+          {/* <Provider>
           
-              <Switch>
+              <Switch> */}
   
                 <Route path="/" exact component={Home} />
                 <Route exact path='/:pk' component={Details} />
@@ -49,9 +51,10 @@ const BaseLayout = () => (
                 <Route path="/privacy" component={Privacy} />
                 <Route path="/about" component={About} />
                 <Route path="/faq" component={Faq} />
+                <Route path="/product" component={Product} />
                
-              </Switch>
-            </Provider>
+              {/* </Switch>
+            </Provider> */}
     </div>
   <div >
   <Navbar bg="" expand="lg" style={{ backgroundColor: "orange", marginTop:"30px"}}>

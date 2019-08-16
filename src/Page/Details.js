@@ -26,7 +26,7 @@ class Details extends Component {
     render() {
         const {blog} = this.state;
 
-        if (blog === null) return <p>Loading ...</p>;
+        if (blog === null) return <p>.</p>;
         return (
         <Container>
                 
