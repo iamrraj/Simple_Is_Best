@@ -222,7 +222,7 @@ class MovieOverview extends Component {
 {/* This iS For Comment Section */}
   <h2> Comment Here </h2> <hr/>
   {/* <div style={{marginTop: "40px", backgroundColor:"white", padding:"30px"}}> */}
-    <div id="disqus_thread"></div>
+  <div id="disqus_thread" class="bg-white"></div>
   {/* </div> */}
 
 
