@@ -6,6 +6,9 @@ import StarRatings from "react-star-ratings";
 import Spinner from '../common/Spinner'
 import CurrencyFormat from 'react-currency-format';
 import ReactPlayer from 'react-player'
+import { Link } from "react-router-dom";
+
+
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/original';
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/original';
@@ -46,8 +49,17 @@ class MovieOverview extends Component {
     //       }
     //   }
 
+
+    onClickRecomendation = async(id) => {
+    
+      this.props.history.push('/overview/'+id);
+      window.location.reload();
+
+    }
+
       
     render() {
+      
         const { movie } = this.state;
         if (movie === null) return <p><Spinner /></p>;
         return (
@@ -73,7 +85,8 @@ class MovieOverview extends Component {
                            
                     </h5>
 
-                    <h5> <i class="fa fa-clock-o" aria-hidden="true"></i>  Runtime: {movie.runtime} Mins &nbsp;&nbsp;&nbsp; <span> <i class="fa fa-calendar" aria-hidden="true"></i>  {movie.release_date}</span> </h5>
+                    <h5> <i class="fa fa-clock-o" aria-hidden="true"></i>  Runtime: {movie.runtime} Mins &nbsp;&nbsp;&nbsp;
+                    <span> <i class="fa fa-calendar" aria-hidden="true"></i>  {movie.release_date}</span> </h5>
 
 
                     {/* Get Overview */}
@@ -146,12 +159,15 @@ class MovieOverview extends Component {
             </Container>
 <Container>
 
-    <h2> Casts And Crews </h2> <hr/>
-    
-       
+
+
+  {/* This iS For Cast And Crews Section */}
+
+  <h2> Casts And Crews </h2> <hr/>    
   <div class="row " >
-  {movie.credits.cast.map(castt=> (
+  {movie.credits.cast.slice(0, 15).map(castt=> (
     <div class="col-sm-2" key={castt.id} style={{marginTop: "15px"}}>
+         
       <div class="card">
       <img src={
         castt.profile_path ?
@@ -159,21 +175,55 @@ class MovieOverview extends Component {
         :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW4I8WjSih2pBUuErcVPFj7G_Zn2xvNVWqvlMvHtb3M1JOtJUU"
       } alt={castt.name} style={{ height:"210px"}}  class="card-img-top ig image"  />
           <div class="middle">
-            <p className="c">{ castt.name }</p>
-            <p className="c">Actor</p>
+            <p className="c">{castt.name }</p>
+            <p className="c">{castt.gender===1?'Female':'Male'}</p>
             <p className="c">{ castt.character }</p>
           </div>
       </div>
+      
   </div>
   ))}
   </div>
+
+
+
+{/* This iS For Recommended Movie Section */}
+  <h2> Recommended Movie </h2> <hr/>
+    
+  <div class="row " >
+  {movie.recommendations.results.slice(0, 7).map(castt=> (
+    <div class="col-sm-3" key={castt.id} style={{marginTop: "15px"}}>
+     <button  onClick={() => this.onClickRecomendation(castt.id)}>
+      <div class="card">
+      <img src={
+        castt.poster_path ?
+        `${POSTER_PATH}${castt.poster_path}`
+        :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW4I8WjSih2pBUuErcVPFj7G_Zn2xvNVWqvlMvHtb3M1JOtJUU"
+      } alt={castt.name} style={{ height:"360px"}}  class="card-img-top ig image"  />
+          <div class="middle">
+            <p className="cc">{castt.title }</p>
+            <p className="cc">{castt.release_date}</p>
+            <p className="cc">{castt.vote_average }/10</p>
+          </div>
+      </div>
+      </button>
+  </div>
+  
+  ))}
+  </div>
+
+
+  
       
      
     
 
 
-
-
+{/* This iS For Comment Section */}
+  <h2> Comment Here </h2> <hr/>
+  {/* <div style={{marginTop: "40px", backgroundColor:"white", padding:"30px"}}> */}
+    <div id="disqus_thread"></div>
+  {/* </div> */}
 
 
 

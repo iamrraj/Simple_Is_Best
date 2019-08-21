@@ -17,6 +17,8 @@ import Product from './Privacy/Product'
 
 import logo from "./img/logo-movie-2.png";
 
+// import SeacrchBar from "./Movie/SeacrchBar" 
+
 
 import MovieList from './Movie/MovieList'
 import Popular from './Movie/Popular'
@@ -43,7 +45,9 @@ const BaseLayout = () => (
       </Nav>
       <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      
       <Button variant="outline-success">Search</Button>
+      {/* <SeacrchBar /> */}
     </Form>
       
     </Navbar.Collapse>
@@ -108,5 +112,7 @@ function App() {
       </BrowserRouter>
   );
 }
+
+
 
 export default App;
