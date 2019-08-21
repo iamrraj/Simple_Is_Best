@@ -6,7 +6,7 @@ import { Row ,Container} from 'react-bootstrap'
 import '../css/custome.css'
 
 
-const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
+const POSTER_PATH = 'http://image.tmdb.org/t/p/original';
 
 export class MovieList extends Component {
     constructor(props){

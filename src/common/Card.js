@@ -42,7 +42,9 @@ export const CardRecomendation = ({
         background: "url(" + urlImage + ")",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "center"
+        backgroundPosition: "center",
+        position: "relative",
+        paddingTop: "50vh",
       }}
     >
       <div className="poster p1">

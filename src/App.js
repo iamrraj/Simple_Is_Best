@@ -15,9 +15,14 @@ import Contact from './Privacy/Contact';
 import Faq from './Privacy/Faq';
 import Product from './Privacy/Product'
 
+import logo from "./img/logo-movie-2.png";
+
+
 import MovieList from './Movie/MovieList'
 import Popular from './Movie/Popular'
 import TopRating from './Movie/TopRating'
+import MovieOverview from './Movie/MovieOverview';
+
 
 
 const BaseLayout = () => (
@@ -25,7 +30,7 @@ const BaseLayout = () => (
   <div>
   <Navbar bg="" expand="lg" style={{  minHeight:"90px"}}>
   <Container>
-    <Navbar.Brand href="/" className="text-dark " style={{fontSize: "28px"}}> MOVIE MANIA  </Navbar.Brand>
+    <Navbar.Brand href="/" className="text-dark " > <img src={logo} alt="lovie_mania" style={{ width:"200px"}} /> </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mx-auto ">
@@ -33,6 +38,7 @@ const BaseLayout = () => (
         
         <Nav.Link href="/toprating" className="text-dark h5"><i className="fa fa-star"></i> TOP RATING</Nav.Link>
         <Nav.Link href="/popular" className="text-dark h5"><i className="fa fa-tint"></i> POPULAR</Nav.Link>
+        
       
       </Nav>
       <Form inline>
@@ -61,9 +67,13 @@ const BaseLayout = () => (
                 <Route path="/" exact  component={MovieList} />
                 <Route path="/toprating" component={TopRating} />
                 <Route path="/popular" component={Popular} />
+               
+
+                <Route path="/overview/:id" component={MovieOverview} />
 
 
                 <Route path="/product" component={Product} />
+               
                
               {/* </Switch>
             </Provider> */}
