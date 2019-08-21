@@ -33,6 +33,7 @@ export class MovieList extends Component {
         try {
           const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=65e043c24785898be00b4abc12fcdaae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1');
           const movies = await res.json();
+          console.log(movies);
           this.setState({
             movies: movies.results,
           });
@@ -51,7 +52,7 @@ export class MovieList extends Component {
                     //         <img src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} class="box"/>
                         
                     // 
-                    <div className="android-card-container mdl-grid">
+                    <div className="android-card-container mdl-grid" key={movie.key}>
                     <div className="android-more-section">
                         <div className="wrap">
                             <Card

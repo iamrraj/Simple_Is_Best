@@ -33,6 +33,7 @@ export class TopRating extends Component {
         try {
           const res = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US&page=1');
           const movies = await res.json();
+          console.log(movies);
           this.setState({
             movies: movies.results,
           });

@@ -49,8 +49,8 @@ const BaseLayout = () => (
           
               <Switch> */}
   
-                <Route path="/m" exact component={Home} />
-                <Route exact path='/:pk' component={Details} />
+                <Route path="/m" component={Home} />
+                <Route  path='/:pk' component={Details} />
 
                 <Route  path='/contact' component={Contact} /> 
                 <Route path="/cookies" component={Cookies} />
@@ -58,7 +58,7 @@ const BaseLayout = () => (
                 <Route path="/about" component={About} />
                 <Route path="/faq" component={Faq} />
 
-                <Route path="/" component={MovieList} />
+                <Route path="/" exact  component={MovieList} />
                 <Route path="/toprating" component={TopRating} />
                 <Route path="/popular" component={Popular} />
 
