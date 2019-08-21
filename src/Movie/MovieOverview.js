@@ -165,7 +165,7 @@ class MovieOverview extends Component {
 
   <h2> Casts And Crews </h2> <hr/>    
   <div class="row " >
-  {movie.credits.cast.slice(0, 15).map(castt=> (
+  {movie.credits.cast.slice(0, 12).map(castt=> (
     <div class="col-sm-2" key={castt.id} style={{marginTop: "15px"}}>
          
       <div class="card">
@@ -191,7 +191,7 @@ class MovieOverview extends Component {
   <h2> Recommended Movie </h2> <hr/>
     
   <div class="row " >
-  {movie.recommendations.results.slice(0, 7).map(castt=> (
+  {movie.recommendations.results.slice(0, 8).map(castt=> (
     <div class="col-sm-3" key={castt.id} style={{marginTop: "15px"}}>
      <button  onClick={() => this.onClickRecomendation(castt.id)}>
       <div class="card">
