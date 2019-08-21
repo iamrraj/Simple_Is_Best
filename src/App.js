@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-import { Provider } from "unstated";
-import { Route,Switch} from 'react-router-dom';
-import {  Navbar, Nav,Container } from 'react-bootstrap';
+// import { Provider } from "unstated";
+import { Route } from 'react-router-dom';
+import {  Navbar, Nav,Container,Form,FormControl,Button } from 'react-bootstrap';
 
 import Home from './Page/Home'
 import Details from './Page/Details'
@@ -15,24 +15,30 @@ import Contact from './Privacy/Contact';
 import Faq from './Privacy/Faq';
 import Product from './Privacy/Product'
 
+import MovieList from './Movie/MovieList'
+import Popular from './Movie/Popular'
+import TopRating from './Movie/TopRating'
+
 
 const BaseLayout = () => (
 
   <div>
-  <Navbar bg="dark" expand="lg">
+  <Navbar bg="" expand="lg" style={{  minHeight:"90px"}}>
   <Container>
-    <Navbar.Brand href="/"> <img src="https://i.imgur.com/v7Or56c.png" className="logo" alt=""  style={{width:"220px", height: "30px"}} /> </Navbar.Brand>
+    <Navbar.Brand href="/" className="text-dark " style={{fontSize: "28px"}}> MOVIE MANIA  </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="mr-auto ">
-        <Nav.Link href="/" className="text-white"><i className="fa fa-home"></i>  Home</Nav.Link>
-        <Nav.Link href="" className="text-white"><i className="fa fa-newspaper-o"></i> Article</Nav.Link>
-        <Nav.Link href="#" className="text-white"><i className="fa fa-file-video-os"></i> Videos</Nav.Link>
-        <Nav.Link href="#" className="text-white"><i className="fa fa-code"></i> Snippets</Nav.Link>
-        <Nav.Link href="#" className="text-white"><i className="fa fa-bullhorn"></i> Sponser</Nav.Link>
-        <Nav.Link href="#" className="text-white"><i className="fa fa-signal"></i> Rss</Nav.Link>
-        <Nav.Link href="/product" className="text-white"><i className="fa fa-signal"></i> Product</Nav.Link>
+      <Nav className="mx-auto ">
+        <Nav.Link href="/" className="text-dark h5"><i className="fa fa-play"></i>  NOW PLAYING</Nav.Link>
+        
+        <Nav.Link href="/toprating" className="text-dark h5"><i className="fa fa-star"></i> TOP RATING</Nav.Link>
+        <Nav.Link href="/popular" className="text-dark h5"><i className="fa fa-tint"></i> POPULAR</Nav.Link>
+      
       </Nav>
+      <Form inline>
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <Button variant="outline-success">Search</Button>
+    </Form>
       
     </Navbar.Collapse>
   </Container>
@@ -43,7 +49,7 @@ const BaseLayout = () => (
           
               <Switch> */}
   
-                <Route path="/" exact component={Home} />
+                <Route path="/m" exact component={Home} />
                 <Route exact path='/:pk' component={Details} />
 
                 <Route  path='/contact' component={Contact} /> 
@@ -51,6 +57,12 @@ const BaseLayout = () => (
                 <Route path="/privacy" component={Privacy} />
                 <Route path="/about" component={About} />
                 <Route path="/faq" component={Faq} />
+
+                <Route path="/" component={MovieList} />
+                <Route path="/toprating" component={TopRating} />
+                <Route path="/popular" component={Popular} />
+
+
                 <Route path="/product" component={Product} />
                
               {/* </Switch>

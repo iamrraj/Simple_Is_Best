@@ -78,8 +78,8 @@ class Details extends Component {
                             <span style={{float:"right"}}>
                                 <span style={{fontSize: "21px"}}>Share the Post &nbsp; &nbsp;</span>
                                 <a href="http://www.facebook.com/sharer.php?u={{request.build_absolute_uri}}" onclick="window.open('http://www.facebook.com/sharer.php?u={{request.build_absolute_uri}}/','Facebook share', 'height=600, width=800')"  class="fa fa-facebook text-white text-center" style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}} > </a>
-                                <a href="https://twitter.com/share?url={{request.build_absolute_uri}}&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank" class="fa fa-twitter text-white text-center" style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}}> </a>
-                                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{request.build_absolute_uri}}" target="_blank" class="fa fa-linkedin text-white text-center" style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}}> </a>
+                                <a href="https://twitter.com/share?url={{request.build_absolute_uri}}&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons"  class="fa fa-twitter text-white text-center" style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}}> </a>
+                                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{request.build_absolute_uri}}"  class="fa fa-linkedin text-white text-center" style={{textDecoration:"none",backgroundColor:"orange",padding:"12px",borderRadius:"50%", width:"45px", fontSize:"22px",marginRight:"7px"}}> </a>
 
                             </span>
                         </p>
