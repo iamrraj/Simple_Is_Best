@@ -93,7 +93,7 @@ class MovieOverview extends Component {
                     <h4>DESCRIPTION:</h4>
                     <p>{movie.overview}</p>
                     
-                    <h5>DIRECTOR: {movie.credits.crew[0].name}</h5>
+                    <h5>DIRECTOR: <a href={'/star/'+movie.credits.crew[0].id}>{movie.credits.crew[0].name}</a></h5>
 
 
                     {/* Get Geners */}
@@ -239,7 +239,7 @@ const move ={
 const MovieInfo = {
   position: "relative",
   top: "-6rem",
-  width: "400px",
+  width: "340px",
   height: "500px",
   borderRadius: "7px",
 }
