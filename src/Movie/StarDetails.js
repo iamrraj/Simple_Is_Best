@@ -43,7 +43,7 @@ class StarDetails extends Component {
                             `${BACKDROP_PATH}${movie.profile_path}`
                             :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW4I8WjSih2pBUuErcVPFj7G_Zn2xvNVWqvlMvHtb3M1JOtJUU"
                           }
-                        alt={movie.name} style={moviee}  /><br></br><br></br>
+                        alt={movie.name} style={moviee} className="ig"  /><br></br><br></br>
                         <a href={`${IMBD}${movie.imdb_id}`} class="btn btn-warning" style={{ padding: "12px", width:"170px",height:"50px",fontSize:"20px"}}>
                             <i class="fa fa-film" aria-hidden="true"></i> IMDb
                         </a>

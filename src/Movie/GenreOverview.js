@@ -65,7 +65,7 @@ class GenreOverview extends Component {
         castt.poster_path ?
         `${POSTER_PATH}${castt.poster_path}`
         :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW4I8WjSih2pBUuErcVPFj7G_Zn2xvNVWqvlMvHtb3M1JOtJUU"
-      } alt={castt.name} style={{ height:"360px"}}  class="card-img-top ig image"  />
+      } alt={castt.name} style={{ height:"360px"}}  class="card-img-top  image"  />
           <div class="middle">
             <p className="cc">{castt.title }</p>
             <p className="cc">{castt.release_date}</p>

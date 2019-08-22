@@ -68,7 +68,7 @@ class MovieOverview extends Component {
             <Container>
                 <Row md={12}>
                     <Col sm={5}>
-                        <img src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} style={MovieInfo}  />
+                        <img src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} style={MovieInfo} className="ig"  />
                     </Col>
                     <Col sm={6}   >
                         <h3 >{movie.original_title}</h3>
