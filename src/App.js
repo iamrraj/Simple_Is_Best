@@ -5,8 +5,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import {  Navbar, Nav,Container,Form,FormControl,Button } from 'react-bootstrap';
 
-import Home from './Page/Home'
-import Details from './Page/Details'
+// import Home from './Page/Home'
+// import Details from './Page/Details'
 
 import About from './Privacy/About';
 import Privacy from './Privacy/Privacy';
@@ -19,6 +19,8 @@ import logo from "./img/logo-movie-2.png";
 
 // import SeacrchBar from "./Movie/SeacrchBar" 
 
+
+import GenreOverview  from './Movie/GenreOverview'
 import StarDetails from './Movie/StarDetails'
 import MovieList from './Movie/MovieList'
 import Popular from './Movie/Popular'
@@ -32,7 +34,7 @@ const BaseLayout = () => (
   <div>
   <Navbar bg="" expand="lg" style={{  minHeight:"90px"}}>
   <Container>
-    <Navbar.Brand href="/" className="text-dark " > <img src={logo} alt="lovie_mania" style={{ width:"200px"}} /> </Navbar.Brand>
+    <Navbar.Brand href="/" className="text-dark " >  <img src={logo} alt="lovie_mania" style={{ width:"200px"}} /> </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mx-auto ">
@@ -41,10 +43,17 @@ const BaseLayout = () => (
         <Nav.Link href="/toprating" className="text-dark h5"><i className="fa fa-star"></i> TOP RATING</Nav.Link>
         <Nav.Link href="/popular" className="text-dark h5"><i className="fa fa-tint"></i> POPULAR</Nav.Link>
         
+        
       
       </Nav>
       <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <FormControl 
+            type="text" 
+            placeholder="Search" 
+            className="mr-sm-2" 
+            // onChange={this.onChange}
+            // value={this.state.keyword} 
+            />
       
       <Button variant="outline-success">Search</Button>
       {/* <SeacrchBar /> */}
@@ -59,8 +68,8 @@ const BaseLayout = () => (
           
               <Switch> */}
   
-                <Route path="/m" component={Home} />
-                <Route  path='/:pk' component={Details} />
+                {/* <Route path="/m" component={Home} />
+                <Route  path='/:pk' component={Details} /> */}
 
                 <Route  path='/contact' component={Contact} /> 
                 <Route path="/cookies" component={Cookies} />
@@ -71,12 +80,14 @@ const BaseLayout = () => (
                 <Route path="/" exact  component={MovieList} />
                 <Route path="/toprating" component={TopRating} />
                 <Route path="/popular" component={Popular} />
+                
                
 
                 <Route path="/overview/:id" component={MovieOverview} />
                 <Route path="/star/:id" component={StarDetails} />
+                <Route path="/genere/:id" component={GenreOverview} />
 
-
+                
                 <Route path="/product" component={Product} />
                
                

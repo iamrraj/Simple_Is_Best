@@ -47,27 +47,26 @@ export class MovieList extends Component {
         return (
             <Container>
                 <Row>
-                {this.state.movies.map( movie => 
-                    // 
-                    //         <img src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} class="box"/>
-                        
-                    // 
-                    <div className="android-card-container mdl-grid" key={movie.key}>
-                    <div className="android-more-section">
-                        <div className="wrap">
-                            <Card
-                                key={movie.id}
-                                movieId={movie.id}
-                                urlImage={`${POSTER_PATH}${movie.poster_path}`}
-                                title={movie.title}
-                            />
-                        </div>
-                    </div>
-                    </div>
-                    
-                
-                )}
-                </Row>
+                 {this.state.movies.map( castt => 
+                     <div class="col-sm-3" key={castt.id} style={{marginTop: "15px"}}>
+                      <a href={'overview/'+ castt.id} >
+                       <div class="card">
+                       <img src={
+                         castt.poster_path ?
+                         `${POSTER_PATH}${castt.poster_path}`
+                         :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW4I8WjSih2pBUuErcVPFj7G_Zn2xvNVWqvlMvHtb3M1JOtJUU"
+                       } alt={castt.name} style={{ height:"360px"}}  class="card-img-top ig image"  />
+                           <div class="middle">
+                             <p className="cc">{castt.title }</p>
+                             <p className="cc">{castt.release_date}</p>
+                             <p className="cc">{castt.vote_average }/10</p>
+                           </div>
+                       </div>
+                       </a>
+                   </div>
+                   
+                   )}
+                   </Row>
             </Container>
         )
     }

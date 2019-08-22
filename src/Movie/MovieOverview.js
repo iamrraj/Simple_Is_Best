@@ -76,17 +76,17 @@ class MovieOverview extends Component {
                     <h5>
                         <StarRatings
                             rating={movie.vote_average }
-                            starRatedColor="blue"
+                            starRatedColor="black"
                             starDimension="20px"
                             numberOfStars={5}
                             name="Rating"
                             />
-                           /{movie.vote_average}
-                           
+                           &nbsp;{movie.vote_average}
+                           &nbsp;&nbsp;&nbsp; <i class="fa fa-heart "  aria-hidden="true"></i> {movie.vote_count}
                     </h5>
 
-                    <h5> <i class="fa fa-clock-o" aria-hidden="true"></i>  Runtime: {movie.runtime} Mins &nbsp;&nbsp;&nbsp;
-                    <span> <i class="fa fa-calendar" aria-hidden="true"></i>  {movie.release_date}</span> </h5>
+                    <h5> <i class="fa fa-clock-o " aria-hidden="true"></i>  Runtime: {movie.runtime} Mins &nbsp;&nbsp;&nbsp;
+                    <span> <i class="fa fa-calendar " aria-hidden="true"></i>  {movie.release_date}</span> </h5>
 
 
                     {/* Get Overview */}
@@ -99,9 +99,9 @@ class MovieOverview extends Component {
                     {/* Get Geners */}
                     {/* <p className="btn btn-secondary">{movie.genres[0].name}</p> */}
                      {movie.genres.map(genre => (
-                        <p key={genre.id} className="btn btn-secondary" style={{ marginRight:"10px"}}>
+                     <a href={'/genere/'+ genre.id}> <p key={genre.id} className="btn btn-secondary" style={{ marginRight:"10px"}}>
                           {genre.name}{' '}
-                        </p>
+                        </p></a>  
                       ))}
         
 
@@ -213,21 +213,12 @@ class MovieOverview extends Component {
   </div>
 
 
+  <h2> Comment Here </h2> <hr/>  
+  <div id="disqus_thread" ></div>  
+</Container>
+
   
-      
-     
-    
-
-
-{/* This iS For Comment Section */}
-  <h2> Comment Here </h2> <hr/>
-  {/* <div style={{marginTop: "40px", backgroundColor:"white", padding:"30px"}}> */}
-  <div id="disqus_thread" class="bg-white"></div>
-  {/* </div> */}
-
-
-
-</Container>          
+ 
         </div>
         )
     }
@@ -239,7 +230,7 @@ export default MovieOverview;
 const move ={
     width: "100%",
     height:'400px',
-    marginTop: "-40px",
+    marginTop: "0px",
 
 }
 
