@@ -19,7 +19,7 @@ import logo from "./img/logo-movie-2.png";
 
 // import SeacrchBar from "./Movie/SeacrchBar" 
 
-
+import StarDetails from './Movie/StarDetails'
 import MovieList from './Movie/MovieList'
 import Popular from './Movie/Popular'
 import TopRating from './Movie/TopRating'
@@ -74,6 +74,7 @@ const BaseLayout = () => (
                
 
                 <Route path="/overview/:id" component={MovieOverview} />
+                <Route path="/star/:id" component={StarDetails} />
 
 
                 <Route path="/product" component={Product} />

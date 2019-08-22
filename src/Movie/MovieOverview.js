@@ -6,7 +6,7 @@ import StarRatings from "react-star-ratings";
 import Spinner from '../common/Spinner'
 import CurrencyFormat from 'react-currency-format';
 import ReactPlayer from 'react-player'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 
@@ -167,7 +167,7 @@ class MovieOverview extends Component {
   <div class="row " >
   {movie.credits.cast.slice(0, 12).map(castt=> (
     <div class="col-sm-2" key={castt.id} style={{marginTop: "15px"}}>
-         
+    <a href={'/star/'+castt.id}>
       <div class="card">
       <img src={
         castt.profile_path ?
@@ -179,7 +179,7 @@ class MovieOverview extends Component {
             <p className="c">{castt.gender===1?'Female':'Male'}</p>
             <p className="c">{ castt.character }</p>
           </div>
-      </div>
+      </div></a>
       
   </div>
   ))}
@@ -248,7 +248,7 @@ const move ={
 const MovieInfo = {
   position: "relative",
   top: "-6rem",
-  width: "430px",
+  width: "400px",
   height: "500px",
   borderRadius: "7px",
 }
