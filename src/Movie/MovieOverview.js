@@ -212,9 +212,6 @@ class MovieOverview extends Component {
   ))}
   </div>
 
-
-  <h2> Comment Here </h2> <hr/>  
-  <div id="disqus_thread" ></div>  
 </Container>
 
   

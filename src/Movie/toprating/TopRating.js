@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
-import { Card } from "../common/Card";
 // import Spinner from "../common/Spinner";
 // import axios from 'axios';
 import { Row ,Container} from 'react-bootstrap'
-import '../css/custome.css'
+
 
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/original';
 
-export class MovieList extends Component {
+export class TopRating extends Component {
     constructor(props){
         super(props);
         this.state ={
@@ -31,7 +30,7 @@ export class MovieList extends Component {
 
     async componentDidMount() {
         try {
-          const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=65e043c24785898be00b4abc12fcdaae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1');
+          const res = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US&page=1');
           const movies = await res.json();
           console.log(movies);
           this.setState({
@@ -47,7 +46,7 @@ export class MovieList extends Component {
         return (
             <Container>
                 <Row>
-                 {this.state.movies.map( castt => 
+                {this.state.movies.map( castt => 
                      <div class="col-sm-3" key={castt.id} style={{marginTop: "15px"}}>
                       <a href={'overview/'+ castt.id} >
                        <div class="card">
@@ -66,10 +65,10 @@ export class MovieList extends Component {
                    </div>
                    
                    )}
-                   </Row>
+                </Row>
             </Container>
         )
     }
 }
 
-export default MovieList;
+export default TopRating ;

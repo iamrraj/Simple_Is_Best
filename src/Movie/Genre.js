@@ -12,10 +12,19 @@ export class Genre extends Component {
         };
     }
 
+    // componentDidMount() {
+    //     axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US`)
+    //       .then(res => {
+    //         const info = res.data;
+    //         console.log(res);
+    //         this.setState({ info });
+    //       })
+          
+    //   }
 
     async componentDidMount() {
         try {
-          const res = await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US');
+          const res = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=65e043c24785898be00b4abc12fcdaae&language=en-US`);
           const movies = await res.json();
           console.log(movies);
           this.setState({
@@ -28,24 +37,17 @@ export class Genre extends Component {
 
 
     render() {
+        // const { movies } = this.state;
+        // if (movies === null) return <p>loading...</p>;
         return (
-            <Container>
-                <Row>
-                {this.state.movies.map( castt => 
-                     <div class="col-sm-3" key={castt.id} style={{marginTop: "15px"}}>
-                      <a href={'overview/'+ castt.id} >
-                       <div class="card">
-                           <div class="middle">
-                           
-                             
-                           </div>
-                       </div>
-                       </a>
-                   </div>
+            <div>
+                 {this.state.movies.map( castt => 
+                
+                     
+                     <p>{castt.name}</p>
+                   )} 
                    
-                   )}
-                   </Row>
-            </Container>
+            </div>
         )
     }
 }

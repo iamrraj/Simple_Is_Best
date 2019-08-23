@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Card } from "../common/Card";
-import Spinner from '../common/Spinner'
+import Spinner from '../../common/Spinner'
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/original';
 

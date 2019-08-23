@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { Container, Col, Row } from "react-bootstrap";
 
-import Spinner from '../common/Spinner'
+import Spinner from '../../common/Spinner'
 // const POSTER_PATH = 'http://image.tmdb.org/t/p/original';
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/original';
 const IMBD = 'http://www.imdb.com/title/'
