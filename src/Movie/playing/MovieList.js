@@ -44,7 +44,7 @@ export class MovieList extends Component {
 
     async componentDidMount(page) {
         try {
-          const res = await fetch(`http://api.themoviedb.org/3/discover/movie?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US`);
+          const res = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US`);
           const movies = await res.json();
           console.log(movies);
           this.setState({
