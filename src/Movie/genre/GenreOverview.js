@@ -20,7 +20,7 @@ class GenreOverview extends Component {
           const movie = await res.json();
           console.log(movie);
           this.setState({
-            movie,
+            movie
           });
         } catch (e) {
           console.log(e);
@@ -85,3 +85,28 @@ class GenreOverview extends Component {
 }
 
 export default GenreOverview;
+
+
+
+// class Movies extends Component {
+//   state = {
+//     movies: []
+//   };
+
+//   async componentDidMount() {
+//     const { data: movies } = await axios.get(
+//       "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=my_api_key"
+//     );
+//     this.setState({ movies });
+//     console.log(movies);
+//   }
+
+//   render() {
+//     console.log(this.state.movies);
+//     return (
+//       <div className="container">
+//         {/* {this.state.movies.results.map(movie => <h1>{movie.title}</h1>)} */}
+//       </div>
+//     );
+//   }
+// }

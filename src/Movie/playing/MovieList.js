@@ -4,7 +4,7 @@ import Spinner from '../../common/Spinner'
 // import axios from 'axios';
 import { Row ,Container} from 'react-bootstrap'
 import Service from '../Service'
-import {getNowPlaying} from '../../Action/NowPlayingActions'
+// import {getNowPlaying} from '../../Action/NowPlayingActions'
 
 const service = new Service();
 

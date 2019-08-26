@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Row ,Container} from 'react-bootstrap'
 import '../css/custome.css'
 
 
@@ -28,7 +27,7 @@ export class Genre extends Component {
           const movies = await res.json();
           console.log(movies);
           this.setState({
-            movies: movies.results,
+            movies: movies.genres,
           });
         } catch (e) {
           console.log(e);
@@ -44,7 +43,7 @@ export class Genre extends Component {
                  {this.state.movies.map( castt => 
                 
                      
-                     <p>{castt.name}</p>
+                     <li className="mdl-menu__item btn"><a href={'/genere/'+ castt.id}>{castt.name}</a></li>
                    )} 
                    
             </div>

@@ -14,6 +14,8 @@ import Popular from './Movie/popular/Popular'
 import TopRating from './Movie/toprating/TopRating'
 import MovieOverview from './Movie/MovieOverview';
 
+
+
 // import Genre from './Movie/Genre'
 
 
@@ -29,6 +31,7 @@ const BaseLayout = () => (
                 <Route path="/" exact  component={MovieList} />
                 <Route path="/toprating" component={TopRating} />
                 <Route path="/popular" component={Popular} />
+               
 
                 {/* <Route path="/genre" component={Genre} /> */}
                 

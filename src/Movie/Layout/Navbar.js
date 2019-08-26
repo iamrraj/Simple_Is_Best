@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {  Navbar, Nav,Container,Form,FormControl,Button } from 'react-bootstrap';
 import logo from "./../../img/logo-movie-2.png";
+import Genre from '../Genre'
+// import SearchBar from '../SearchBar'
 
 class Navbarr extends Component {
 
@@ -31,12 +33,13 @@ class Navbarr extends Component {
             />
       
       <Button variant="outline-success">Search</Button>
-      {/* <SeacrchBar /> */}
+      
     </Form>
+    {/* <SearchBar /> */}
       
     </Navbar.Collapse>
-  </Container>
-  <button
+
+    <button
               className="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect"
               id="more-button"
             >
@@ -47,15 +50,17 @@ class Navbarr extends Component {
               className="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect"
               htmlFor="more-button"
             >
-              <li className="mdl-menu__item">5.0 Lollipop</li>
-              <li className="mdl-menu__item">4.4 KitKat</li>
+              <p><Genre /></p>
+              {/* <li className="mdl-menu__item">4.4 KitKat</li>
               <li disabled className="mdl-menu__item">
                 4.3 Jelly Bean
               </li>
               <li className="mdl-menu__item">
                  Genre
-              </li>
+              </li> */}
             </ul>
+  </Container>
+         
 
             
   </Navbar>
