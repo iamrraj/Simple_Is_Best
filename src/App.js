@@ -31,11 +31,6 @@ const BaseLayout = () => (
                 <Route path="/" exact  component={MovieList} />
                 <Route path="/toprating" component={TopRating} />
                 <Route path="/popular" component={Popular} />
-               
-
-                {/* <Route path="/genre" component={Genre} /> */}
-                
-                
                 <Route path="/overview/:id" component={MovieOverview} />
                 <Route path="/star/:id" component={StarDetails} />
                 <Route path="/genere/:id" component={GenreOverview} />

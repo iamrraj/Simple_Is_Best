@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Spinner from '../../common/Spinner'
-
+import Formm from './Form'
 // import axios from 'axios';
 import { Row ,Container} from 'react-bootstrap'
 import Service from '../Service'
@@ -55,6 +55,23 @@ export class MovieList extends Component {
         }
       }
 
+
+    // Get Data from filter date
+    getData = async(e) =>{
+      try{
+          const find = e.target.elements.find.value;
+          e.preventDefault();   
+          const res = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US&query=${find}&page=1&include_adult=false`);
+          const movies = await res.json();
+          console.log(movies);
+          this.setState({
+              movies: movies.results
+      });
+      } catch(e){
+          console.log(e);
+      }
+  }
+
       
 
     render() {
@@ -62,6 +79,7 @@ export class MovieList extends Component {
       if (movies === null) return <p><Spinner /></p>;
         return (
             <Container>
+              <Formm loaddata={this.getData} />
                 <Row>
                  {this.state.movies.map( castt => 
                  
