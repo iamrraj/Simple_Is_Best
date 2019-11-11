@@ -5,14 +5,20 @@ class Formm extends Component {
   render() {
     return (
       <form onSubmit={this.props.loaddata} method="POST">
-        <input
-          type="text"
-          style={{ width: "200px" }}
-          placeholder="Search"
-          className="mr-sm-2 form-control"
-          name="find"
-        />
-        <button className="btn btn-outline-success">Search</button>
+        <div className="row">
+          <div className="col-sm-3">
+            <input
+              type="text"
+              style={{ width: "200px" }}
+              placeholder="Search"
+              className="form-control"
+              name="find"
+            />
+          </div>
+          <div className="col-sm-2">
+            <button className="btn btn-outline-success">Search</button>
+          </div>
+        </div>
       </form>
     );
   }
