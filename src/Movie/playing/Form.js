@@ -1,21 +1,21 @@
-import React, { Component } from 'react'
-import {Form,FormControl,Button } from 'react-bootstrap';
+import React, { Component } from "react";
+// import {Form,FormControl,Button } from 'react-bootstrap';
 
 class Formm extends Component {
-    render() {
-        return (
-            <Form onSubmit={this.props.loaddata} inline>
-            <FormControl 
-                    type="text" 
-                    style={{width:"200px"}}
-                    placeholder="Search" 
-                    className="mr-sm-2" 
-                    name="find"
-                    />
-            <Button variant="outline-success">Search</Button>
-            </Form>
-        )
-    }
+  render() {
+    return (
+      <form onSubmit={this.props.loaddata} method="POST">
+        <input
+          type="text"
+          style={{ width: "200px" }}
+          placeholder="Search"
+          className="mr-sm-2 form-control"
+          name="find"
+        />
+        <button className="btn btn-outline-success">Search</button>
+      </form>
+    );
+  }
 }
 
 export default Formm;

@@ -155,6 +155,7 @@ class MovieOverview extends Component {
 
 
                     </Col>
+      
                 </Row>
             </Container>
 <Container>
