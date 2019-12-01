@@ -10,7 +10,7 @@ const service = new Service();
 
 const POSTER_PATH = "http://image.tmdb.org/t/p/original";
 
-export class MovieList extends Component {
+export class TMovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,7 +42,7 @@ export class MovieList extends Component {
   async componentDidMount(page) {
     try {
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/now_playing?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US`
+        `https://api.themoviedb.org/3/tv/on_the_air?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US`
       );
       const movies = await res.json();
       console.log(movies);
@@ -86,7 +86,7 @@ export class MovieList extends Component {
         <Row>
           {this.state.movies.map(castt => (
             <div class="col-sm-3" key={castt.id} style={{ marginTop: "15px" }}>
-              <a href={"overview/" + castt.id}>
+              <a href={"/tv/overview/" + castt.id}>
                 <div class="card">
                   <img
                     src={
@@ -99,8 +99,8 @@ export class MovieList extends Component {
                     class="card-img-top ig image"
                   />
                   <div class="middle">
-                    <p className="cc">{castt.title}</p>
-                    <p className="cc">{castt.release_date}</p>
+                    <p className="cc">{castt.original_name}</p>
+                    <p className="cc">{castt.first_air_date}</p>
                     <p className="cc">{castt.vote_average}/10</p>
                   </div>
                 </div>
@@ -117,4 +117,4 @@ export class MovieList extends Component {
   }
 }
 
-export default MovieList;
+export default TMovieList;

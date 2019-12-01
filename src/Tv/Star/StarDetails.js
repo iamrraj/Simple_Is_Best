@@ -7,7 +7,7 @@ import Spinner from "../../common/Spinner";
 const BACKDROP_PATH = "http://image.tmdb.org/t/p/original";
 const IMBD = "http://www.imdb.com/title/";
 
-class StarDetails extends Component {
+class TStarDetails extends Component {
   constructor(props) {
     super(props);
 
@@ -83,7 +83,7 @@ class StarDetails extends Component {
   }
 }
 
-export default StarDetails;
+export default TStarDetails;
 
 const moviee = {
   width: "450px",

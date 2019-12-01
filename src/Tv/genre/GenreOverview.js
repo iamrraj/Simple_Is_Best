@@ -3,7 +3,7 @@ import Spinner from "../../common/Spinner";
 
 const POSTER_PATH = "http://image.tmdb.org/t/p/original";
 
-class GenreOverview extends Component {
+class TGenreOverview extends Component {
   constructor(props) {
     super(props);
 
@@ -15,7 +15,7 @@ class GenreOverview extends Component {
   async componentDidMount() {
     try {
       const res = await fetch(
-        `https://api.themoviedb.org/3/discover/movie?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${this.props.match.params.id}`
+        `https://api.themoviedb.org/3/discover/tv?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${this.props.match.params.id}`
       );
       const movie = await res.json();
       console.log(movie);
@@ -28,7 +28,7 @@ class GenreOverview extends Component {
   }
 
   onClickRecomendation = async id => {
-    this.props.history.push("/overview/" + id);
+    this.props.history.push("/tv/overview/" + id);
     window.location.reload();
   };
 
@@ -73,8 +73,8 @@ class GenreOverview extends Component {
                     class="card-img-top  image"
                   />
                   <div class="middle">
-                    <p className="cc">{castt.title}</p>
-                    <p className="cc">{castt.release_date}</p>
+                    <p className="cc">{castt.original_name}</p>
+                    <p className="cc">{castt.first_air_date}</p>
                     <p className="cc">{castt.vote_average}/10</p>
                   </div>
                 </div>
@@ -87,7 +87,7 @@ class GenreOverview extends Component {
   }
 }
 
-export default GenreOverview;
+export default TGenreOverview;
 
 // class Movies extends Component {
 //   state = {
