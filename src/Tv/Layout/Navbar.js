@@ -60,13 +60,13 @@ class TNavbarr extends Component {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mx-auto ">
-                <Nav.Link href="/" className="text-dark h5">
-                  <i className="fa fa-play"></i> NOW PLAYING
+                <Nav.Link href="/tv" className="text-dark h5">
+                  <i className="fa fa-play"></i> ON AIR 
                 </Nav.Link>
-                <Nav.Link href="/toprating" className="text-dark h5">
+                <Nav.Link href="/tv/toprating" className="text-dark h5">
                   <i className="fa fa-star"></i> TOP RATING
                 </Nav.Link>
-                <Nav.Link href="/popular" className="text-dark h5">
+                <Nav.Link href="/tv/popular" className="text-dark h5">
                   <i className="fa fa-tint"></i> POPULAR
                 </Nav.Link>
               </Nav>

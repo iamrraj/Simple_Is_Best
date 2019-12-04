@@ -19,7 +19,7 @@ class TStarDetails extends Component {
   async componentDidMount() {
     try {
       const res = await fetch(
-        `https://api.themoviedb.org/3/person/${this.props.match.params.id}?api_key=65e043c24785898be00b4abc12fcdaae&language=en-US`
+        `https://api.themoviedb.org/3/person/${this.props.match.params.id}?api_key=65e043c24785898be00b4abc12fcdaae&language=en-US&append_to_response=videos,details,similar,credits,recommendations,images`
       );
       const movie = await res.json();
       console.log(movie);
