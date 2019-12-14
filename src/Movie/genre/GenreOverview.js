@@ -37,6 +37,28 @@ class GenreOverview extends Component {
     }
   };
 
+  _loadLess = async e => {
+    e.preventDefault();
+
+    await this.setState(prev => {
+      return { page: prev.page - 1 };
+    });
+    await service.getCustomersByURL(parseInt(this.state.page));
+    //this.props.history.push("/?page=" + parseInt(this.state.page));
+    try {
+      const res = await fetch(
+        `https://api.themoviedb.org/3/discover/movie?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${this.props.match.params.id}&page=${this.state.page}`
+      );
+      const movie = await res.json();
+      console.log(movie);
+      this.setState({
+        movie
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   async componentDidMount() {
     try {
       const res = await fetch(
@@ -103,6 +125,13 @@ class GenreOverview extends Component {
             className="btn__loadmore_popular_next"
           >
             <i className="fas fa-arrow-right fa-3x" />
+          </button>
+
+          <button
+            onClick={this._loadLess}
+            className="btn__loadmore_popular_less"
+          >
+            <i className="fas fa-arrow-left fa-3x" />
           </button>
         </div>
       </div>

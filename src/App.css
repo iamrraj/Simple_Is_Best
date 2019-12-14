@@ -8,6 +8,16 @@
   background: orange;
   border: 2px solid navy;
 }
+.btn__loadmore_popular_less {
+  border-radius: 10px;
+  width: 100px;
+  position: fixed;
+  background: orange;
+  margin-bottom: 30px;
+  left: 0;
+  bottom: 0;
+  border: 2px solid navy;
+}
 
 .h5 {
   border-bottom: "3px solid green";

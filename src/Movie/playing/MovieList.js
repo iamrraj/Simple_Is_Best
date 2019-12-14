@@ -40,6 +40,28 @@ export class MovieList extends Component {
     }
   };
 
+  _loadLess = async e => {
+    e.preventDefault();
+
+    await this.setState(prev => {
+      return { page: prev.page - 1 };
+    });
+    await service.getCustomersByURL(parseInt(this.state.page));
+    //this.props.history.push("/?page=" + parseInt(this.state.page));
+    try {
+      const res = await fetch(
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US&page=${this.state.page}`
+      );
+      const movies = await res.json();
+      console.log(movies);
+      this.setState({
+        movies: movies.results
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   // componentDidMount() {
   //     axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US`)
   //       .then(res => {
@@ -113,6 +135,13 @@ export class MovieList extends Component {
             className="btn__loadmore_popular_next"
           >
             <i className="fas fa-arrow-right fa-3x" />
+          </button>
+
+          <button
+            onClick={this._loadLess}
+            className="btn__loadmore_popular_less"
+          >
+            <i className="fas fa-arrow-left fa-3x" />
           </button>
         </Container>
       </div>
