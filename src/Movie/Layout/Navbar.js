@@ -60,17 +60,17 @@ class Navbarr extends Component {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mx-auto ">
-                <Nav.Link href="/" className="text-dark h6">
+                <Nav.Link href="/movie" className="text-dark h6">
                   <i className="fa fa-play"></i> NOW PLAYING
                 </Nav.Link>
-                <Nav.Link href="/toprating" className="text-dark h6">
+                <Nav.Link href="/movie/toprating" className="text-dark h6">
                   <i className="fa fa-star"></i> TOP RATING
                 </Nav.Link>
-                <Nav.Link href="/popular" className="text-dark h6">
+                <Nav.Link href="/movie/popular" className="text-dark h6">
                   <i className="fa fa-tint"></i> POPULAR
                 </Nav.Link>
 
-                <Nav.Link href="/tv" className="text-dark h6">
+                {/* <Nav.Link href="/tv" className="text-dark h6">
                   <i className="fa fa-desktop"></i> TV ONAIR
                 </Nav.Link>
                 <Nav.Link href="/tv/toprating" className="text-dark h6">
@@ -78,7 +78,7 @@ class Navbarr extends Component {
                 </Nav.Link>
                 <Nav.Link href="/tv/popular" className="text-dark h6">
                   <i className="fa fa-tint"></i> TV POPULAR
-                </Nav.Link>
+                </Nav.Link> */}
               </Nav>
               <Search />
             </Navbar.Collapse>

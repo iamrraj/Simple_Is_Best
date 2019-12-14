@@ -3,9 +3,9 @@ import "./App.css";
 import { BrowserRouter, Switch } from "react-router-dom";
 import { Provider } from "unstated";
 import { Route } from "react-router-dom";
-import { Redirect } from "react-router";
+// import { Redirect } from "react-router";
 
-import Navbarr from "./Movie/Layout/Navbar";
+// import Navbarr from "./Movie/Layout/Navbar";
 import Footer from "./Movie/Layout/Footer";
 
 import GenreOverview from "./Movie/genre/GenreOverview";
@@ -25,19 +25,21 @@ import TMovieOverview from "./Tv/MovieOverview";
 import TSearchResults from "./Tv/Search/SearchResults";
 import Season from "./Tv/Season/Season";
 import Episode from "./Tv/Episode/Episode";
+import MainPage from "./common/MainPage";
 
 // import Genre from './Movie/Genre'
 
 const BaseLayout = () => (
   <div>
-    <Navbarr />
+    {/* <Navbarr /> */}
 
     <Provider>
       <Switch>
-        <Route path="/" exact component={MovieList} />
+        <Route path="/" exact component={MainPage} />
+        <Route path="/movie" exact component={MovieList} />
         <Route path="/results/:query" component={SearchResults} />
-        <Route path="/toprating" component={TopRating} />
-        <Route path="/popular" component={Popular} />
+        <Route path="/movie/toprating" component={TopRating} />
+        <Route path="/movie/popular" component={Popular} />
         <Route path="/overview/:id" component={MovieOverview} />
         <Route path="/star/:id" component={StarDetails} />
         <Route path="/genere/:id" component={GenreOverview} />

@@ -7,9 +7,9 @@ class MainPage extends Component {
         <img
           src="https://images2.minutemediacdn.com/image/upload/c_crop,h_1266,w_2252,x_74,y_0/f_auto,q_auto,w_1100/v1574897107/shape/mentalfloss/67393-gettyimages-1129464319.jpg"
           alt="don"
-          style={{ width: "100%" }}
+          style={{ width: "100%", marginBottom: "-200px" }}
         />
-        <div style={{ position: "relative", top: "-450px" }}>
+        <div style={{ position: "relative", top: "-250px" }}>
           <h2 className="text-center text-white"> Choose Here</h2>
           <center>
             <div>

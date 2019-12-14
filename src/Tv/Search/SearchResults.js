@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Row, Container } from "react-bootstrap";
-
+import Navbarr from "../Layout/Navbar";
 import axios from "axios";
 const POSTER_PATH = "http://image.tmdb.org/t/p/original";
 
@@ -35,48 +35,51 @@ class TSearchResults extends Component {
   componentDidMount() {}
 
   onClickRecomendation = async id => {
-    this.props.history.push("/overview/" + id);
+    this.props.history.push("/tv/overview/" + id);
     window.location.reload();
   };
 
   render() {
     return (
-      <Container>
-        <Row>
-          {this.state.results.map(castt => {
-            return (
-              <div
-                class="col-sm-3"
-                key={castt.id}
-                style={{ marginTop: "15px" }}
-              >
-                <a
-                  href="# "
-                  onClick={() => this.onClickRecomendation(castt.id)}
+      <div>
+        <Navbarr />
+        <Container>
+          <Row>
+            {this.state.results.map(castt => {
+              return (
+                <div
+                  class="col-sm-3"
+                  key={castt.id}
+                  style={{ marginTop: "15px" }}
                 >
-                  <div class="card">
-                    <img
-                      src={
-                        castt.poster_path
-                          ? `${POSTER_PATH}${castt.poster_path}`
-                          : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW4I8WjSih2pBUuErcVPFj7G_Zn2xvNVWqvlMvHtb3M1JOtJUU"
-                      }
-                      alt={castt.name}
-                      style={{ height: "360px" }}
-                      class="card-img-top ig image"
-                    />
-                    <div class="middle">
-                      <p className="cc">{castt.original_name}</p>
-                      <p className="cc">{castt.first_air_date}</p>
-                      <p className="cc">{castt.vote_average}/10</p>
+                  <a
+                    href="# "
+                    onClick={() => this.onClickRecomendation(castt.id)}
+                  >
+                    <div class="card">
+                      <img
+                        src={
+                          castt.poster_path
+                            ? `${POSTER_PATH}${castt.poster_path}`
+                            : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW4I8WjSih2pBUuErcVPFj7G_Zn2xvNVWqvlMvHtb3M1JOtJUU"
+                        }
+                        alt={castt.name}
+                        style={{ height: "360px" }}
+                        class="card-img-top ig image"
+                      />
+                      <div class="middle">
+                        <p className="cc">{castt.original_name}</p>
+                        <p className="cc">{castt.first_air_date}</p>
+                        <p className="cc">{castt.vote_average}/10</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </div>
-            );
-          })}
-        </Row>
-      </Container>
+                  </a>
+                </div>
+              );
+            })}
+          </Row>
+        </Container>
+      </div>
     );
   }
 }

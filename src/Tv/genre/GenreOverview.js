@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Spinner from "../../common/Spinner";
-
+import Navbarr from "../Layout/Navbar";
 const POSTER_PATH = "http://image.tmdb.org/t/p/original";
 
 class TGenreOverview extends Component {
@@ -8,14 +8,37 @@ class TGenreOverview extends Component {
     super(props);
 
     this.state = {
-      movie: null
+      movie: null,
+      page: null
     };
   }
+
+  _loadMore = async e => {
+    e.preventDefault();
+
+    await this.setState(prev => {
+      return { page: prev.page + 1 };
+    });
+    //await service.getCustomersByURL(parseInt(this.state.page));
+    //this.props.history.push("/?page=" + parseInt(this.state.page));
+    try {
+      const res = await fetch(
+        `https://api.themoviedb.org/3/discover/tv?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${this.props.match.params.id}&page=${this.state.page}`
+      );
+      const movie = await res.json();
+      console.log(movie);
+      this.setState({
+        movie
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   async componentDidMount() {
     try {
       const res = await fetch(
-        `https://api.themoviedb.org/3/discover/tv?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${this.props.match.params.id}`
+        `https://api.themoviedb.org/3/discover/tv?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${this.props.match.params.id}&page=${this.state.page}`
       );
       const movie = await res.json();
       console.log(movie);
@@ -41,46 +64,44 @@ class TGenreOverview extends Component {
         </p>
       );
     return (
-      <div className="container">
-        {/* <div className="android-card-container mdl-grid" >
-                  {movie.results.map(move => (
-                  <div className="android-more-section" key={move.id}>
-                      <div className="wrap">
-                          <Card
-                              key={move.id}
-                              movieId={move.id}
-                              urlImage={`${POSTER_PATH}${move.poster_path}`}
-                              title={move.title}
-                          />
-                      </div>
+      <div>
+        <Navbarr />
+        <div className="container">
+          <div class="row ">
+            {movie.results.map(castt => (
+              <div
+                class="col-sm-3"
+                key={castt.id}
+                style={{ marginTop: "15px" }}
+              >
+                <button onClick={() => this.onClickRecomendation(castt.id)}>
+                  <div class="card">
+                    <img
+                      src={
+                        castt.poster_path
+                          ? `${POSTER_PATH}${castt.poster_path}`
+                          : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW4I8WjSih2pBUuErcVPFj7G_Zn2xvNVWqvlMvHtb3M1JOtJUU"
+                      }
+                      alt={castt.name}
+                      style={{ height: "360px" }}
+                      class="card-img-top  image"
+                    />
+                    <div class="middle">
+                      <p className="cc">{castt.original_name}</p>
+                      <p className="cc">{castt.first_air_date}</p>
+                      <p className="cc">{castt.vote_average}/10</p>
+                    </div>
                   </div>
-                  ))}
-                  </div>   */}
-
-        <div class="row ">
-          {movie.results.map(castt => (
-            <div class="col-sm-3" key={castt.id} style={{ marginTop: "15px" }}>
-              <button onClick={() => this.onClickRecomendation(castt.id)}>
-                <div class="card">
-                  <img
-                    src={
-                      castt.poster_path
-                        ? `${POSTER_PATH}${castt.poster_path}`
-                        : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW4I8WjSih2pBUuErcVPFj7G_Zn2xvNVWqvlMvHtb3M1JOtJUU"
-                    }
-                    alt={castt.name}
-                    style={{ height: "360px" }}
-                    class="card-img-top  image"
-                  />
-                  <div class="middle">
-                    <p className="cc">{castt.original_name}</p>
-                    <p className="cc">{castt.first_air_date}</p>
-                    <p className="cc">{castt.vote_average}/10</p>
-                  </div>
-                </div>
-              </button>
-            </div>
-          ))}
+                </button>
+              </div>
+            ))}
+          </div>
+          <button
+            onClick={this._loadMore}
+            className="btn__loadmore_popular_next"
+          >
+            <i className="fas fa-arrow-right fa-3x" />
+          </button>
         </div>
       </div>
     );
@@ -88,26 +109,3 @@ class TGenreOverview extends Component {
 }
 
 export default TGenreOverview;
-
-// class Movies extends Component {
-//   state = {
-//     movies: []
-//   };
-
-//   async componentDidMount() {
-//     const { data: movies } = await axios.get(
-//       "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=my_api_key"
-//     );
-//     this.setState({ movies });
-//     console.log(movies);
-//   }
-
-//   render() {
-//     console.log(this.state.movies);
-//     return (
-//       <div className="container">
-//         {/* {this.state.movies.results.map(movie => <h1>{movie.title}</h1>)} */}
-//       </div>
-//     );
-//   }
-// }

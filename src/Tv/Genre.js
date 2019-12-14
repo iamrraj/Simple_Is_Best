@@ -42,7 +42,7 @@ export class Genre extends Component {
       <div>
         {this.state.movies.map(castt => (
           <li className="mdl-menu__item btn">
-            <a href={"tv//genere/" + castt.id}>{castt.name}</a>
+            <a href={"tv/genere/" + castt.id}>{castt.name}</a>
           </li>
         ))}
       </div>

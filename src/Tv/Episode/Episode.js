@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row } from "react-bootstrap";
-
+import Navbarr from "../Layout/Navbar";
 import Spinner from "../../common/Spinner";
 
 // const POSTER_PATH = 'http://image.tmdb.org/t/p/original';
@@ -39,49 +39,52 @@ class Episode extends Component {
       );
     return (
       <div>
-        <img
-          src={`${BACKDROP_PATH}${movie.poster_path}`}
-          alt={movie.name}
-          style={move}
-        />
-        <Container>
-          <h3>Overview</h3>
-          <p>{movie.overview}</p>
+        <Navbarr />
+        <div>
+          <img
+            src={`${BACKDROP_PATH}${movie.poster_path}`}
+            alt={movie.name}
+            style={move}
+          />
+          <Container>
+            <h3>Overview</h3>
+            <p>{movie.overview}</p>
 
-          <div>
-            <h3>EPISODE LIST</h3>
-            <hr></hr>
-            <Row>
-              {movie.episodes.map(castt => (
-                <div
-                  class="col-sm-3"
-                  key={castt.id}
-                  style={{ marginTop: "15px" }}
-                >
-                  <a href={"overview/" + castt.id}>
-                    <div class="card">
-                      <img
-                        src={
-                          castt.still_path
-                            ? `${BACKDROP_PATH}${castt.still_path}`
-                            : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW4I8WjSih2pBUuErcVPFj7G_Zn2xvNVWqvlMvHtb3M1JOtJUU"
-                        }
-                        alt={castt.name}
-                        style={{ height: "360px" }}
-                        class="card-img-top ig image"
-                      />
-                      <div class="middle">
-                        <p className="cc">{castt.name}</p>
-                        <p className="cc">{castt.air_date}</p>
-                        <p className="cc">Episode: {castt.episode_number}</p>
+            <div>
+              <h3>EPISODE LIST</h3>
+              <hr></hr>
+              <Row>
+                {movie.episodes.map(castt => (
+                  <div
+                    class="col-sm-3"
+                    key={castt.id}
+                    style={{ marginTop: "15px" }}
+                  >
+                    <a href={"overview/" + castt.id}>
+                      <div class="card">
+                        <img
+                          src={
+                            castt.still_path
+                              ? `${BACKDROP_PATH}${castt.still_path}`
+                              : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW4I8WjSih2pBUuErcVPFj7G_Zn2xvNVWqvlMvHtb3M1JOtJUU"
+                          }
+                          alt={castt.name}
+                          style={{ height: "360px" }}
+                          class="card-img-top ig image"
+                        />
+                        <div class="middle">
+                          <p className="cc">{castt.name}</p>
+                          <p className="cc">{castt.air_date}</p>
+                          <p className="cc">Episode: {castt.episode_number}</p>
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                </div>
-              ))}
-            </Row>
-          </div>
-        </Container>
+                    </a>
+                  </div>
+                ))}
+              </Row>
+            </div>
+          </Container>
+        </div>
       </div>
     );
   }

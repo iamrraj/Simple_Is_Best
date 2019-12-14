@@ -61,7 +61,7 @@ class TNavbarr extends Component {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mx-auto ">
                 <Nav.Link href="/tv" className="text-dark h5">
-                  <i className="fa fa-play"></i> ON AIR 
+                  <i className="fa fa-play"></i> ON AIR
                 </Nav.Link>
                 <Nav.Link href="/tv/toprating" className="text-dark h5">
                   <i className="fa fa-star"></i> TOP RATING
