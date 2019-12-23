@@ -15,6 +15,7 @@ import Popular from "./Movie/popular/Popular";
 import TopRating from "./Movie/toprating/TopRating";
 import MovieOverview from "./Movie/MovieOverview";
 import SearchResults from "./Movie/Search/SearchResults";
+import Upcoming from "./Movie/Upcoming/Upcoming";
 
 import TGenreOverview from "./Tv/genre/GenreOverview";
 import TStarDetails from "./Tv/Star/StarDetails";
@@ -39,6 +40,7 @@ const BaseLayout = () => (
         <Route path="/movie" exact component={MovieList} />
         <Route path="/results/:query" component={SearchResults} />
         <Route path="/movie/toprating" component={TopRating} />
+        <Route path="/movie/upcoming" component={Upcoming} />
         <Route path="/movie/popular" component={Popular} />
         <Route path="/overview/:id" component={MovieOverview} />
         <Route path="/star/:id" component={StarDetails} />

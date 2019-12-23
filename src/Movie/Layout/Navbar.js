@@ -69,6 +69,9 @@ class Navbarr extends Component {
                 <Nav.Link href="/movie/popular" className="text-dark h6">
                   <i className="fa fa-tint"></i> POPULAR
                 </Nav.Link>
+                <Nav.Link href="/movie/upcoming" className="text-dark h6">
+                  <i className="fa fa-calendar"></i> Upcoming
+                </Nav.Link>
 
                 {/* <Nav.Link href="/tv" className="text-dark h6">
                   <i className="fa fa-desktop"></i> TV ONAIR
